@@ -1,0 +1,15 @@
+#!/bin/sh
+adduser \
+    --no-create-home \
+    --disabled-password \
+    --disabled-login \
+    squizzitd
+addgroup --system squizzitd
+
+systemctl daemon-reload
+systemctl enable squizzitd
+systemctl start squizzitd
+
+echo "!!! Please edit"
+echo "/etc/nginx/sites-enabled/squizzit"
+echo "to match your host configuration"

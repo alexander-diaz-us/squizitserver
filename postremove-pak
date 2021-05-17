@@ -1,0 +1,6 @@
+#!/bin/sh
+
+groupdel squizzitd
+userdel squizzitd
+
+rm /etc/nginx/sites-enabled/squizzitd

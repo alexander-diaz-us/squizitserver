@@ -1,0 +1,20 @@
+[Unit]
+Description=Squizzitd Server
+After=network.target
+[Service]
+ExecStart=/usr/bin/squizit
+Type=forking
+Restart=on-failure
+User=squizzitd
+Group=squizzitd
+RuntimeDirectory=litecoind
+RuntimeDirectoryMode=0770
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+NoNewPrivileges=true
+PrivateDevices=true
+MemoryDenyWriteExecute=true
+ 
+[Install]
+WantedBy=multi-user.target
